@@ -3,7 +3,6 @@ import { Card } from "./card";
 import { DragAndDrop } from "./dnd";
 
 const storage = new Storage(localStorage);
-// localStorage.clear();
 
 let data = storage.load();
 let board = document.querySelector(".board");
