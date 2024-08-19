@@ -39,6 +39,7 @@ export class DragAndDrop {
     this.topDiff = e.pageY - top;
     this.ghostEl.style.left = `${e.pageX - this.leftDiff - this.ghostEl.offsetWidth / 2}px`;
     this.ghostEl.style.top = `${e.pageY - this.topDiff - this.ghostEl.offsetHeight / 2}px`;
+    document.body.style.cursor = "grabbing";
     this.draggedEl.style.opacity = 0;
 
     this.emptyCard = document.createElement("li");
@@ -107,6 +108,7 @@ export class DragAndDrop {
     this.ghostEl.style.left = `0px`;
     this.ghostEl.style.top = `0px`;
     this.ghostEl.style.width = `auto`;
+    document.body.style.cursor = "auto";
 
     const parentEl = this.elementBehind
       .closest(".board-column")
@@ -126,7 +128,7 @@ export class DragAndDrop {
     if (document.querySelector(".empty-card")) {
       document.querySelector(".empty-card").remove();
     }
-    
+
     this.ghostEl.classList.remove("dragged");
     this.draggedEl.remove();
     this.ghostEl = null;

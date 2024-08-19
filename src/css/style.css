@@ -69,7 +69,6 @@ body {
 .board-card.dragged {
   position: absolute;
   pointer-events: none;
-  cursor: grabbing;
 }
 
 .textarea {

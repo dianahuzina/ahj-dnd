@@ -15,21 +15,7 @@ export class Card {
 
   init() {
     this.addCard();
-    this.cards.forEach((card) => {
-      const deleteBtn = card.querySelector(".delete-btn");
-      card.addEventListener("click", () => {
-        card.remove();
-      });
-      card.addEventListener("mouseover", () => {
-        deleteBtn.classList.remove("visually-hidden");
-      });
-      card.addEventListener("mouseout", () => {
-        deleteBtn.classList.add("visually-hidden");
-      });
-      deleteBtn.addEventListener("click", () => {
-        card.remove();
-      });
-    });
+    this.deleteCard();
   }
 
   addCard() {
