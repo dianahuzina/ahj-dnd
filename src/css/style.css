@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  color: inherit;
+}
+
+*:focus {
+  border: none;
+  outline: none;
+}
+
+body {
+  background-color: #4891de;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.board {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.board-column {
+  width: calc(100% / 3);
+  background-color: rgb(230, 231, 232);
+  border-radius: 5px;
+}
+
+.board-column-title {
+  margin: 10px 20px 10px;
+  font-size: 16px;
+  color: #104b8a;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.board-card {
+  position: relative;
+  margin: 0 10px 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+  pointer-events: auto;
+  cursor: default;
+}
+
+.board-card.dragged {
+  position: absolute;
+  pointer-events: none;
+  cursor: grabbing;
+}
+
+.textarea {
+  position: relative;
+  margin: 0 10px 0 10px;
+  padding: 5px 10px;
+  width: calc(100% - 20px);
+  height: 65px;
+  font: inherit;
+  background-color: #fff;
+  opacity: 0.8;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+  resize: none;
+}
+
+.textarea:focus {
+  outline: 2px solid #00000056;
+}
+
+.textarea-btn {
+  padding: 7px 15px;
+  margin: 7px 10px;
+  background-color: rgb(14, 173, 14);
+  color: #fff;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cross-btn {
+  font: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.add-btn {
+  padding: 5px 15px;
+  font: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.add-btn:hover {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: left;
+  text-decoration: underline;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 22px;
+  aspect-ratio: 1 / 1;
+  font: inherit;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.delete-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.empty-card {
+  position: relative;
+  margin: 0 10px 10px;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
