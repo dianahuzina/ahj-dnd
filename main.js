@@ -33,21 +33,7 @@ class Card {
   }
   init() {
     this.addCard();
-    this.cards.forEach(card => {
-      const deleteBtn = card.querySelector(".delete-btn");
-      card.addEventListener("click", () => {
-        card.remove();
-      });
-      card.addEventListener("mouseover", () => {
-        deleteBtn.classList.remove("visually-hidden");
-      });
-      card.addEventListener("mouseout", () => {
-        deleteBtn.classList.add("visually-hidden");
-      });
-      deleteBtn.addEventListener("click", () => {
-        card.remove();
-      });
-    });
+    this.deleteCard();
   }
   addCard() {
     const addBtns = this.board.querySelectorAll(".add-btn");
@@ -154,6 +140,7 @@ class DragAndDrop {
     this.topDiff = e.pageY - top;
     this.ghostEl.style.left = `${e.pageX - this.leftDiff - this.ghostEl.offsetWidth / 2}px`;
     this.ghostEl.style.top = `${e.pageY - this.topDiff - this.ghostEl.offsetHeight / 2}px`;
+    document.body.style.cursor = "grabbing";
     this.draggedEl.style.opacity = 0;
     this.emptyCard = document.createElement("li");
     this.emptyCard.classList.add("empty-card");
@@ -206,6 +193,7 @@ class DragAndDrop {
     this.ghostEl.style.left = `0px`;
     this.ghostEl.style.top = `0px`;
     this.ghostEl.style.width = `auto`;
+    document.body.style.cursor = "auto";
     const parentEl = this.elementBehind.closest(".board-column").querySelector(".board-list");
     if (this.elementBehind.closest(".add-btn")) {
       parentEl.append(this.ghostEl);
